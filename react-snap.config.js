@@ -1,9 +1,7 @@
 module.exports = {
     include: [
         '/',
-        '/about',
-        '/contact',
-        // Add any other routes you want to pre-render
+        '/blog',
+        '/world-news',
     ],
-    // Add any other configuration options here
 };

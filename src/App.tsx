@@ -1,51 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
 
-// Create some simple components for our routes
-const Home = () => <h2>Home Page</h2>;
-const About = () => <h2>About Page</h2>;
-const Contact = () => <h2>Contact Page</h2>;
+import styles from './App.module.css';
+
+const pageStyles = {
+  display: "block",
+  padding: 36,
+}
+
+
+const Home = lazy(() => import('./pages/Home'));
+const Blog = lazy(() => import('./pages/Blog'));
+const WorldNews = lazy(() => import('./pages/WorldNews'));
 
 function App() {
   return (
       <Router>
-        <div className="App">
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <div className={styles.mainLayout}>
+            <header>
+              <nav className={styles.nav}>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link to="/world-news">World News</Link>
+                  </li>
+                </ul>
+              </nav>
+            </header>
+            <main style={pageStyles}>
+              <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/blog" element={<Blog/>}/>
+                <Route path="/world-news" element={<WorldNews/>}/>
+              </Routes>
+            </main>
+          </div>
+        </Suspense>
       </Router>
   );
 }

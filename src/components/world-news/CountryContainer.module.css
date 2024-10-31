@@ -1,0 +1,11 @@
+.worldNews li {
+    display: block;
+    padding-inline-start: 0;
+}
+
+.worldNews h2 {
+    font-weight: 500;
+    margin: 0;
+    padding: 0.5ch;
+    padding-top: 3ch;
+}

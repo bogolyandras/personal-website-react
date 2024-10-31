@@ -1,0 +1,8 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* For multi-line text */
+    overflow-y: auto; /* In case of overflow */
+    height: 100%;
+}
