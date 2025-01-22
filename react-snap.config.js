@@ -1,7 +1,7 @@
 module.exports = {
     include: [
         '/',
-        '/blog',
-        '/world-news',
+        '/blog/',
+        '/world-news/',
     ],
 };

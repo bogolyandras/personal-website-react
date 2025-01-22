@@ -25,10 +25,10 @@ function App() {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link to="/blog">Blog</Link>
+                    <Link to="/blog/">Blog</Link>
                   </li>
                   <li>
-                    <Link to="/world-news">World News</Link>
+                    <Link to="/world-news/">World News</Link>
                   </li>
                 </ul>
               </nav>
@@ -36,8 +36,8 @@ function App() {
             <main style={pageStyles}>
               <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/blog" element={<Blog/>}/>
-                <Route path="/world-news" element={<WorldNews/>}/>
+                <Route path="/blog/" element={<Blog/>}/>
+                <Route path="/world-news/" element={<WorldNews/>}/>
               </Routes>
             </main>
           </div>
