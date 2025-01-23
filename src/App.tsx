@@ -1,8 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import TitleProvider from './components/TitleProvider';
 import styles from './App.module.css';
+import NavItem from "./components/NavItem";
 
 const pageStyles = {
   display: "block",
@@ -22,15 +23,9 @@ function App() {
             <header>
               <nav className={styles.nav}>
                 <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/blog/">Blog</Link>
-                  </li>
-                  <li>
-                    <Link to="/world-news/">World News</Link>
-                  </li>
+                    <NavItem to="/">Home</NavItem>
+                    <NavItem to="/blog/">Blog</NavItem>
+                    <NavItem to="/world-news/">World News</NavItem>
                 </ul>
               </nav>
             </header>
