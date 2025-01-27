@@ -32,6 +32,3 @@ jobs:
         run: npm run build
         env:
           CI: true
-          # Add Puppeteer configuration for react-snap
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-          CHROME_PATH: /usr/bin/google-chrome-stable
