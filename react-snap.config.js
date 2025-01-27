@@ -1,22 +1,17 @@
-const config = process.env.CI
-  ? {
-      include: [
-        '/',
-        '/blog/',
-        '/world-news/',
-      ],
-      puppeteerArgs: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox"
-      ]
-    }
-  : {
-      include: [
-        '/',
-        '/blog/',
-        '/world-news/',
-      ],
-      puppeteerArgs: []
-    };
+const commonConfig = {
+  include: [
+    '/',
+    '/blog/',
+    '/world-news/',
+  ]
+};
 
-module.exports = config;
+const ciPuppeteerArgs = [
+  '--no-sandbox',
+  '--disable-setuid-sandbox'
+];
+
+const config = {
+  ...commonConfig,
+  puppeteerArgs: process.env.CI ? ciPuppeteerArgs : []
+};
