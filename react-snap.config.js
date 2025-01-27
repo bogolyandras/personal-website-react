@@ -13,5 +13,6 @@ const ciPuppeteerArgs = [
 
 const config = {
   ...commonConfig,
-  puppeteerArgs: process.env.CI ? ciPuppeteerArgs : []
+  puppeteerArgs: process.env.CI ? ciPuppeteerArgs : ['--no-sandbox',
+  '--disable-setuid-sandbox']
 };
