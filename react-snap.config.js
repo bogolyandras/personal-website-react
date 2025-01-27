@@ -16,3 +16,5 @@ const config = {
   puppeteerArgs: process.env.CI ? ciPuppeteerArgs : ['--no-sandbox',
   '--disable-setuid-sandbox']
 };
+
+module.exports = config;
