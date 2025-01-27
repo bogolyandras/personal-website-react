@@ -4,7 +4,7 @@ const config = {
     '/blog/',
     '/world-news/',
   ],
-  puppeteerArgs: process.env.NODE_ENV === 'production' 
+  puppeteerArgs: process.env.CI 
     ? ['--no-sandbox', '--disable-setuid-sandbox']
     : []
 };
