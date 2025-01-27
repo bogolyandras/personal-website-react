@@ -30,3 +30,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          CI: true
+          # Add these environment variables to fix Chrome sandbox issues
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+          CHROME_BIN: /usr/bin/google-chrome

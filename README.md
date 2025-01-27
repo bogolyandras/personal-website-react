@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Sources of my Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![CI/CD](https://github.com/bogolyandras/personal-website-react/actions/workflows/node.yml/badge.svg)](https://github.com/bogolyandras/personal-website-react/actions/workflows/node.yml)
 
 ## Available Scripts
 
