@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+
+import { render, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders home link exists', async () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // Wait for the content to be loaded
+  await waitFor(() => {
+    const homeLinkElement = screen.getByText('Home');
+    expect(homeLinkElement).toBeInTheDocument();
+  });
 });
